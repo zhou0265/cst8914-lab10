@@ -62,8 +62,11 @@ class MenuButtonActions {
   setFocusToMenuitem(newMenuitem) {
     this.menuitemNodes.forEach(function (item) {
 // R.G. Here to add the roving tabindex logic  ;)
+// Add this code to fix the keyboard selection
+//If the item is the focused one, then set the tab index to 0, otherwise set it to -1
       item.tabIndex = item === newMenuitem ? 0 : -1;
     });
+// focus on the menu item that just selected
     newMenuitem.focus();
   }
 
